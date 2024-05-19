@@ -22,6 +22,8 @@ protected:
 	const int _CLIP_HEIGHT = 24;
 	const int _MOVE_DELAY = 50;
 public:
+	Actor(){}
+	virtual ~Actor(){}
 	virtual void render(Graphics* graphics, SDL_Texture* spritesheet) = 0;
 	virtual void update() = 0;
 	virtual void reset() = 0;

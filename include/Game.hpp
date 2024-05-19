@@ -18,7 +18,6 @@ class Pacman;
 class Game
 {
 private:
-	bool _start;
 	int _level;
 	int _lives;
 	int _score;

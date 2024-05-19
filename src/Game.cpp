@@ -7,7 +7,6 @@
 
 
 Game::Game() :
-	_start(false),
 	_MAX_LIVES(3),
 	_SCORE_INC(50),
 	_SPRITESHEET("res/images/images.png"),

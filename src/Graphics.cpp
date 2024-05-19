@@ -51,13 +51,13 @@ SDL_Texture* Graphics::loadTexture(const std::string& file)
 
 void Graphics::drawTexture(SDL_Texture* texture, const SDL_Rect& src, const SDL_Rect& dst, const double angle)
 {
-    SDL_Rect transRect = applyTransToRect(dst);
+	SDL_Rect transRect = applyTransToRect(dst);
 	SDL_RenderCopyEx(_renderer, texture, &src, &transRect, angle, NULL, SDL_FLIP_NONE);
 }
 
 void Graphics::drawTexture(SDL_Texture* texture, const SDL_Rect& dst, const double angle)
 {
-    SDL_Rect transRect = applyTransToRect(dst);
+        SDL_Rect transRect = applyTransToRect(dst);
 	SDL_RenderCopyEx(_renderer, texture, NULL, &transRect, angle, NULL, SDL_FLIP_NONE);
 }
 
@@ -78,7 +78,7 @@ void Graphics::drawLine(const int x1, const int y1, const int x2, const int y2)
 
 void Graphics::drawFilledRect(const SDL_Rect& rect)
 {
-    SDL_Rect transRect = applyTransToRect(rect);
+        SDL_Rect transRect = applyTransToRect(rect);
 	SDL_RenderFillRect(_renderer, &transRect);
 }
 
@@ -95,5 +95,5 @@ void Graphics::applyTransformation(const double scaleX, const double scaleY)
 
 SDL_Rect Graphics::applyTransToRect(const SDL_Rect& rect) 
 {
-	return { rect.x * _scaleX, rect.y * _scaleY, rect.w * _scaleX, rect.h * _scaleY };
+	return { (int)(rect.x * _scaleX), (int)(rect.y * _scaleY), (int)(rect.w * _scaleX), (int)(rect.h * _scaleY) };
 }

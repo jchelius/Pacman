@@ -17,7 +17,6 @@ enum BlockType
 
 class Block
 {
-	friend class Game;
 private:
 	SDL_Rect _srcRect;
 	SDL_Rect _dstRect;

@@ -33,7 +33,6 @@ void Pacman::move()
 	if (_justEnteredPortal && ((_x > -0.5 && _x < 1) || (_x < 26.5 && _x > 25))) _justEnteredPortal = false;
 	_x += 0.5 * _vx;
 	_y += 0.5 * _vy;
-	std::cout << _vx << ", " << _vy << std::endl;
 	switchAnim();
 }
 
